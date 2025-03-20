@@ -1,0 +1,84 @@
+<div class="bg-dark py-3">
+  <h3 class="text-white text-center">Users List</h3>
+</div>
+
+{{#if alert}}
+  <div
+    class="container alert alert-success alert-dismissible fade show mt-4"
+    role="alert"
+  >
+    {{alert}}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+{{/if}}
+
+<div class="container">
+  <div class="row d-flex justify-content-center mt-4">
+    <div class="col-md-12 d-flex justify-content-end">
+      <a href="/adduser" type="button" class="btn btn-success">Add User</a>
+    </div>
+    <div class="col-md-12">
+      <div class="card my-4">
+        <div class="card-header bg-info">
+          <h3 class="text-white">Users</h3>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <tr>
+              <th>S.No</th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Website</th>
+              <th>Company Name</th>
+              <th>Action</th>
+            </tr>
+
+            {{#each rows}}
+              <tr>
+                <td>{{increment @index}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.username}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.website}}</td>
+                <td>{{this.companyname}}</td>
+                <td>
+                  <div class="d-flex">
+                    <a
+                      href="/edituser/{{this.id}}"
+                      class="btn btn-secondary me-2"
+                      style="height: 38px"
+                    >Edit</a>
+                    <a
+                      href="/project/user/{{this.id}}"
+                      class="btn btn-primary me-2"
+                      style="height: 38px"
+                    >View</a>
+
+                    <form
+                      action="/deleteuser/{{this.id}}"
+                      method="POST"
+                      onsubmit="return confirm('Are you sure you want to delete this user?')"
+                    >
+                      <button
+                        type="submit"
+                        class="btn btn-danger"
+                      >Delete</button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+            {{/each}}
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

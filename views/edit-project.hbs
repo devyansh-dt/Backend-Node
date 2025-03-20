@@ -1,0 +1,64 @@
+<div class="bg-dark py-3">
+  <h3 class="text-white text-center">Edit Project</h3>
+</div>
+{{#if alert}}
+  <div
+    class="container alert alert-success alert-dismissible fade show mt-4"
+    role="alert"
+  >
+    {{alert}}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+{{/if}}
+<div class="row d-flex justify-content-center mt-4">
+  <div class="col-md-10 d-flex justify-content-end">
+
+{{#each project}}
+    <a href="/project/user/{{user_id}}" class="btn btn-dark">Back</a>
+  </div>
+  <div class="col-md-10">
+    <div class="card my-4">
+      <div class="card-header bg-info">
+        <h3 class="text-white">Edit Project</h3>
+      </div>
+
+      
+        <form action="/project/editproject/{{this.id}}" method="post">
+          <div class="card-body">
+            <div class="mb-3">
+              <label class="h5">Name</label>
+              <input
+                value="{{this.name}}"
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Enter your Name"
+                name="name"
+              />
+
+            </div>
+            <div class="mb-3">
+              <label class="h5">Details</label>
+              <textarea
+                placeholder="Enter your Project Details"
+                class="form-control"
+                name="body"
+                cols="30"
+                rows="10"
+              >{{this.body}}</textarea>
+            </div>
+
+            <div>
+              <button class="btn btn-lg btn-primary">Update</button>
+            </div>
+          </div>
+
+        </form>
+      {{/each}}
+    </div>
+  </div>
+</div>

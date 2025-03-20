@@ -1,0 +1,87 @@
+<div class="bg-dark py-3">
+  <h3 class="text-white text-center">New User</h3>
+</div>
+<div class="container">
+  <div class="row d-flex justify-content-center mt-4">
+    <div class="col-md-10 d-flex justify-content-end">
+      <a href="/" class="btn btn-dark">Back</a>
+    </div>
+    <div class="col-md-10">
+      <div class="card my-4">
+        <div class="card-header bg-info">
+          <h3 class="text-white">New User</h3>
+        </div>
+
+        <form action="/adduser" method="post">
+
+          <div class="card-body">
+            <div class="mb-3">
+              <label class="h5">Name</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Enter your Name"
+                name="name"
+              />
+
+            </div>
+            <div class="mb-3">
+              <label class="h5">Username</label>
+              <input
+                value=""
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Enter your Username"
+                name="username"
+              />
+
+            </div>
+            <div class="mb-3">
+              <label class="h5">Phone</label>
+              <input
+                value=""
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Enter your No."
+                name="phone"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="h5">E-mail</label>
+              <input
+                value=""
+                type="email"
+                class="form-control form-control-lg"
+                placeholder="Enter your email"
+                name="email"
+              />
+
+            </div>
+            <div class="mb-3">
+              <label class="h5">Website</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Enter your Website"
+                name="website"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="h5">Company Name</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Enter your Company Name"
+                name="companyname"
+              />
+            </div>
+            <div>
+              <button class="btn btn-lg btn-primary">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
